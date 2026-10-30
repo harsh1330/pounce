@@ -6,5 +6,7 @@ body:
     id: idea
     attributes:
       label: What would you like pounce to do?
+      description: Describe what you were trying to do and where pounce got in the way.
+      placeholder: "For example: let me pick a different hint letter for the dock."
     validations:
       required: true
