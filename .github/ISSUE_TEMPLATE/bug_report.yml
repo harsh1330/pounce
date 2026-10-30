@@ -1,0 +1,29 @@
+name: Something doesn't work
+description: pounce missed a button, clicked the wrong thing, or didn't start.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: Which app?
+      placeholder: Files, Firefox, VS Code…
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of pounce doctor
+      description: Run `pounce doctor` in a terminal and paste what it prints.
+      render: text
+  - type: input
+    id: system
+    attributes:
+      label: Distribution and GNOME version
+      placeholder: Ubuntu 24.04, GNOME 46
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Install guide and questions
+    url: https://pounce.harshcom.in
+    about: How to install pounce, what setup changes, and common questions.

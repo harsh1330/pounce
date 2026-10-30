@@ -1,0 +1,10 @@
+name: Idea or request
+description: Something pounce could do better.
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like pounce to do?
+    validations:
+      required: true
