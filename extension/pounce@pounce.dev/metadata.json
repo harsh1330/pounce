@@ -1,0 +1,7 @@
+{
+  "uuid": "pounce@pounce.dev",
+  "name": "Pounce",
+  "description": "On-screen hints and clicks for pounce, a keyboard-driven UI clicker. Needs the pounced daemon.",
+  "shell-version": ["46", "47", "48"],
+  "url": "https://example.invalid/pounce"
+}

@@ -1,0 +1,134 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+/* pounce overlay: one accent (orange), dark translucent card, quiet secondary text. */
+
+.pounce-panel {
+  /* the card is draggable; the position is saved in ~/.config/pounce/overlay.json */
+  background-color: rgba(22, 22, 26, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  padding: 10px 14px 9px 14px;
+  spacing: 6px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.55);
+}
+
+.pounce-row { spacing: 10px; }
+
+/* the pounce paw (icons/pounce-mark.svg), in place of a generic search icon */
+.pounce-icon { icon-size: 22px; }
+
+.pounce-entry,
+.pounce-entry:focus,
+.pounce-entry:hover {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 4px 0;
+  font-size: 1.25em;
+  color: #f4f4f5;
+  caret-color: #ff8a1f;
+  selection-background-color: rgba(255, 138, 31, 0.45);
+  selected-color: #ffffff;
+}
+.pounce-entry StLabel.hint-text { color: rgba(244, 244, 245, 0.40); }
+
+.pounce-count {
+  background-color: rgba(255, 138, 31, 0.18);
+  color: #ffb26b;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.pounce-count-empty {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(244, 244, 245, 0.55);
+}
+
+.pounce-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* top suggestions */
+.pounce-list { spacing: 2px; }
+.pounce-item { padding: 6px 8px; border-radius: 9px; spacing: 10px; }
+.pounce-item:hover { background-color: rgba(255, 255, 255, 0.06); }
+.pounce-item-selected,
+.pounce-item-selected:hover { background-color: rgba(255, 138, 31, 0.22); }
+.pounce-item-code {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #ffb26b;
+  background-color: rgba(255, 138, 31, 0.14);
+  border-radius: 5px;
+  padding: 1px 6px;
+}
+.pounce-item-label { color: #f4f4f5; }
+.pounce-item-unnamed { color: rgba(244, 244, 245, 0.55); font-style: italic; }
+.pounce-item-role { color: rgba(244, 244, 245, 0.45); font-size: 0.85em; }
+.pounce-keys { color: rgba(244, 244, 245, 0.45); font-size: 0.8em; }
+.pounce-status { color: #ffb26b; font-size: 0.85em; }
+
+/* hint boxes over the app */
+.pounce-box {
+  border: 2px solid rgba(255, 168, 64, 0.70);
+  border-radius: 6px;
+  background-color: rgba(255, 168, 64, 0.10);
+}
+/* St has no dashed borders; click-only targets get a lighter fill instead. */
+.pounce-box-click { background-color: rgba(255, 168, 64, 0.04); }
+.pounce-selected {
+  border: 3px solid #ff8a1f;
+  background-color: rgba(255, 138, 31, 0.26);
+  box-shadow: 0 0 12px rgba(255, 138, 31, 0.55);
+}
+.pounce-tag {
+  background-color: #ff8a1f;
+  color: #16161a;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* hint code in each box's corner */
+.pounce-code {
+  background-color: #16161a;
+  color: #ffb26b;
+  border: 1px solid rgba(255, 138, 31, 0.7);
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 0.72em;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.pounce-code-hit {
+  border-color: #ffffff;
+  background-color: #2a1a0a;
+}
+
+/* gear: opens the Settings app */
+.pounce-gear { padding: 4px; border-radius: 99px; }
+.pounce-gear:hover { background-color: rgba(255, 255, 255, 0.10); }
+.pounce-gear-icon { icon-size: 16px; color: rgba(244, 244, 245, 0.55); }
+
+/* light theme (Settings → Theme). Accent colours are set inline from the settings. */
+.pounce-light .pounce-panel {
+  background-color: rgba(250, 250, 251, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.25);
+}
+.pounce-light .pounce-entry,
+.pounce-light .pounce-entry:focus,
+.pounce-light .pounce-entry:hover { color: #1d1d20; }
+.pounce-light .pounce-entry StLabel.hint-text { color: rgba(29, 29, 32, 0.40); }
+.pounce-light .pounce-divider { background-color: rgba(0, 0, 0, 0.08); }
+.pounce-light .pounce-item:hover { background-color: rgba(0, 0, 0, 0.05); }
+.pounce-light .pounce-item-label { color: #1d1d20; }
+.pounce-light .pounce-item-unnamed { color: rgba(29, 29, 32, 0.55); }
+.pounce-light .pounce-item-role,
+.pounce-light .pounce-keys { color: rgba(29, 29, 32, 0.50); }
+.pounce-light .pounce-gear:hover { background-color: rgba(0, 0, 0, 0.06); }
+.pounce-light .pounce-gear-icon { color: rgba(29, 29, 32, 0.55); }
