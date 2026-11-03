@@ -1,5 +1,14 @@
 # Changes
 
+## 0.1.2 (3 November 2026)
+
+- Chrome, Chromium, Brave and Edge get codes on X11 too (`pounce setup` gives them the same
+  flagged launcher as Electron apps).
+- Fixed: the search window crashed on GTK 4.6 (Ubuntu 22.04, Pop!_OS 22.04) and stayed on screen.
+- `pounce --version` and `pounced --version`; `pounce doctor` shows the version.
+- The APT repository lists i386 and armhf, so multiarch systems no longer print a
+  "doesn't support architecture" notice.
+
 ## 0.1.1 (3 November 2026)
 
 - VS Code, Slack, Discord, Obsidian and other Electron apps get codes on X11 too.
