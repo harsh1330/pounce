@@ -1,5 +1,11 @@
 # Changes
 
+## 0.1.3 (3 November 2026)
+
+- Fixed: Chrome with more than one profile got codes only in the profile picker. Its window
+  title has the profile name appended, and it keeps extra nameless windows, so pounce didn't
+  recognise the browser window.
+
 ## 0.1.2 (3 November 2026)
 
 - Fixed: on X11, pressing the hotkey again didn't close the hints.
