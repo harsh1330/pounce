@@ -5,6 +5,8 @@
 - Fixed: Chrome with more than one profile got codes only in the profile picker. Its window
   title has the profile name appended, and it keeps extra nameless windows, so pounce didn't
   recognise the browser window.
+- Fixed: Pounce Settings showed the accent colour swatches grey under themes that style buttons
+  (Pop!_OS).
 
 ## 0.1.2 (3 November 2026)
 
