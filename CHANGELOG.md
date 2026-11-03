@@ -2,6 +2,7 @@
 
 ## 0.1.2 (3 November 2026)
 
+- Fixed: on X11, pressing the hotkey again didn't close the hints.
 - Chrome, Chromium, Brave and Edge get codes on X11 too (`pounce setup` gives them the same
   flagged launcher as Electron apps).
 - Fixed: the search window crashed on GTK 4.6 (Ubuntu 22.04, Pop!_OS 22.04) and stayed on screen.

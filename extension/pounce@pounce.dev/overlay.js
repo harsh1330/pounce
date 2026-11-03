@@ -301,6 +301,7 @@ class HintLayer {
             this._grab = Main.pushModal(this._root, {actionMode: Shell.ActionMode.POPUP});
             if (!(this._grab.get_seat_state() & Clutter.GrabState.KEYBOARD))
                 throw new Error('could not grab the keyboard');
+            this._allowShortcuts();
             global.stage.set_key_focus(this._entry.clutter_text);
         } catch (e) {
             this.destroy();
@@ -632,7 +633,29 @@ class HintLayer {
         this._status.visible = Boolean(text);
     }
 
+    // On X11 the pounce hotkey is a grab on the root window, so while the overlay holds the
+    // keyboard the key never reaches _onKey (on Wayland it does). GNOME blocks custom shortcuts
+    // in popups; let them run while we're up, so the hotkey runs `pounce` again and the daemon
+    // closes the overlay. Restored on destroy.
+    _allowShortcuts() {
+        this._allowed = [];
+        if (Meta.is_wayland_compositor())
+            return;
+        const modes = Main.wm._allowedKeybindings;
+        for (const [name, mode] of Object.entries(modes ?? {})) {
+            if (name.startsWith('external-grab-') && !(mode & Shell.ActionMode.POPUP)) {
+                modes[name] = mode | Shell.ActionMode.POPUP;
+                this._allowed.push([name, mode]);
+            }
+        }
+    }
+
     destroy() {
+        for (const [name, mode] of this._allowed ?? []) {
+            if (name in Main.wm._allowedKeybindings)
+                Main.wm._allowedKeybindings[name] = mode;
+        }
+        this._allowed = [];
         if (this._grab) {
             Main.popModal(this._grab);
             this._grab = null;
