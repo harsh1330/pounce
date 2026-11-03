@@ -1,5 +1,14 @@
 # Changes
 
+## 0.1.1 (3 November 2026)
+
+- VS Code, Slack, Discord, Obsidian and other Electron apps get codes on X11 too.
+  `pounce setup` gives each one a copy of its launcher that starts it with
+  `--force-renderer-accessibility`; `pounce setup --undo` removes the copies and `pounce doctor`
+  reports apps that still lack it. Run `pounce setup` once after updating, then restart those apps.
+- If VS Code switches to "Screen Reader Optimized", add `"editor.accessibilitySupport": "off"` to
+  its settings: codes keep working.
+
 ## 0.1.0 (30 October 2026)
 
 First release.
